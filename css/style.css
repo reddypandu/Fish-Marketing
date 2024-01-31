@@ -24,12 +24,7 @@
   bottom: 45px;
   z-index: 99;
 }
-#services-container div {
-  display: none;
-}
-#services-container div.active {
-  display: block;
-}
+
 /*** Spinner ***/
 #spinner {
   opacity: 0;
