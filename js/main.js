@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to fetch and display service content
   function fetchServiceContent(service) {
     // Assuming you have separate HTML files for each service (service1.html, service2.html, etc.)
-    fetch(`/services/${service}.html`)
+    fetch(`/service/${service}.html`)
       .then((response) => response.text())
       .then((html) => {
         // Set the innerHTML of services-container to the fetched HTML
