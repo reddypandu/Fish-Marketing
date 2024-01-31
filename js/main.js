@@ -112,49 +112,4 @@
   });
 })(jQuery);
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Get the services-container element
-  var servicesContainer = document.getElementById("services-container");
 
-  // Get all service links
-  var serviceLinks = document.querySelectorAll("nav a");
-
-  // Add click event listener to each service link
-  serviceLinks.forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      // Prevent default link behavior
-      event.preventDefault();
-
-      // Get the href attribute of the clicked link
-      var href = link.getAttribute("href").substring(1); // Remove the leading "/"
-
-      // Remove the "active" class from all service links
-      serviceLinks.forEach(function (serviceLink) {
-        serviceLink.classList.remove("active");
-      });
-
-      // Add the "active" class to the clicked link
-      link.classList.add("active");
-
-      // Fetch and display the corresponding service content
-      fetchServiceContent(href);
-    });
-  });
-
-  // Function to fetch and display service content
-  function fetchServiceContent(service) {
-    // Assuming you have separate HTML files for each service (service1.html, service2.html, etc.)
-    fetch(`/service/${service}.html`)
-      .then((response) => response.text())
-      .then((html) => {
-        // Set the innerHTML of services-container to the fetched HTML
-        servicesContainer.innerHTML = html;
-
-        // Add the "active" class to the corresponding service content
-        servicesContainer.querySelector(`#${service}`).classList.add("active");
-      })
-      .catch((error) =>
-        console.error("Error fetching service content:", error)
-      );
-  }
-});
