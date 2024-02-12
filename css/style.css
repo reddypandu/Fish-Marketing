@@ -93,6 +93,7 @@
 
 .sticky-top.navbar-dark .navbar-nav .nav-link {
   padding: 20px 0;
+  
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
@@ -143,6 +144,7 @@
   .sticky-top.navbar-dark {
     position: fixed;
     background: var(--dark) !important;
+    padding-block: 1rem !important;
   }
 }
 
