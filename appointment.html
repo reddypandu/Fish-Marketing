@@ -110,8 +110,8 @@
                         </div>
                     </div>
                     
-                    <div class="col-md-12">
-                        <div class="wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-md-12 ">
+                        <!-- <div class="wow fadeInUp" data-wow-delay="0.2s">
                             <form method="post" action="https://script.google.com/macros/s/AKfycbzYhBFzeaGjpIqqH_-pyiVhSGjkelXLdDcscT0zGISmkYfIMvGRgat9cLZYzcMtlDK1/exec">
                                 <div class="row g-3">
                                     <div class="col-md-6">
@@ -145,13 +145,102 @@
                                     </div>
                                 </div>
                             </form>
+                        </div> -->
+                        <form method="post" action="//submit.form" onSubmit="return validateForm();">
+                            <div class="row g-3">
+                            
+                            <div style="padding-bottom: 18px;" class="col-12">Name<br/>
+                            <input type="text" id="data_8" name="data_8"  class="form-control" required/>
+                            </div>
+                            <div style="padding-bottom: 18px;">Email<br/>
+                            <input type="text" id="data_4" name="data_4"  class="form-control" required/>
+                            </div>
+                            <div style="padding-bottom: 18px;">Number<br/>
+                            <input type="number" id="data_5" name="data_5"  class="form-control" required/>
+                            </div>
+                            <div style="padding-bottom: 18px;">Comments<br/>
+                            <textarea id="data_7" false name="data_7"  rows="6" class="form-control"></textarea>
+                            </div>
+                            <div style="padding-bottom: 18px;" class="col-12 "><input class="btn btn-primary" name="skip_Submit" value="Submit" type="submit"/></div>
+                            <div>
+                            <div style="float:right"><a href="https://www.100forms.com" id="lnk100" style="color: white;">form to email</a></div>
+                            <script src="https://www.100forms.com/js/FORMKEY:4BAPMC7UKEG3" type="text/javascript"></script>
+                            </div>
+                            <div id="thank">
+                                <p class="" style="color: green;">Thank You For Booking!</p>
+                                <i class="fa fa-times"></i>
+                            </div>
                         </div>
+                            </form>
+                            
+                            <script type="text/javascript">
+                            function validateForm() {
+                            if (!validateEmail(document.getElementById('data_4').value.trim())) {
+                            alert('Email must be a valid email address!');
+                            return false;
+                            }
+                            thank();
+                            resetForm();
+                            
+        return false;
+                            }
+                            function resetForm() {
+        document.getElementById("data_8").value = ""; // Reset Name field
+        document.getElementById("data_4").value = ""; // Reset Email field
+        document.getElementById("data_5").value = ""; // Reset Number field
+        document.getElementById("data_7").value = ""; // Reset Comments field
+    }
+    function thank(){
+        document.getElementById("thank").style.display="block"
+    }
+   
+                            function isEmpty(str) { return (str.length === 0 || !str.trim()); }
+                            function validateEmail(email) {
+                            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
+                            return isEmpty(email) || re.test(email);
+                            }
+
+
+
+                            const btn=document.querySelector(".fa-times");
+                            const close=document.getElementById("thank");
+
+                            btn.addEventListener("click",()=>{
+                                close.style.display="none";
+                            })
+
+                            </script>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Contact End -->
-
+<style>
+    #thank{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%,-50%);
+        background-color:#fea11684;
+        max-width: 300px;
+        border-radius: 10px;
+        display: none;
+    }
+    #thank p{
+text-align: center;
+padding: 3rem;
+font-size: 1rem;
+font-weight: 600;
+    }
+    #thank .fa{
+position: absolute;
+top: 0;
+right: 0;
+padding: 0.5rem;
+cursor: pointer;
+    }
+</style>
         <!-- Testimonial Start -->
         <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
             <div class="container">
