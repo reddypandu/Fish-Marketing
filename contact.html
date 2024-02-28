@@ -112,31 +112,31 @@
                    
                     <div class="col-md-12">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <form method="post" action="https://script.google.com/macros/s/AKfycbzYhBFzeaGjpIqqH_-pyiVhSGjkelXLdDcscT0zGISmkYfIMvGRgat9cLZYzcMtlDK1/exec">
+                            <form  onsubmit="sendMail(); reset(); return false;">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
+                                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                                             <label for="name">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <input type="email" name="email" class="form-control" id="email"
-                                                placeholder="Your Email">
+                                                placeholder="Your Email" required>
                                             <label for="email">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject">
-                                            <label for="subject">Subject</label>
+                                            <input type="number" name="subject" class="form-control" id="number" placeholder="Enter Your Number" required>
+                                            <label for="subject">Number</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <textarea class="form-control" name="message" placeholder="Leave a message here"
-                                                id="message" style="height: 150px"></textarea>
+                                                id="message" style="height: 150px" required></textarea>
                                             <label for="message">Message</label>
                                         </div>
                                     </div>
@@ -158,7 +158,23 @@
             </div>
         </div>
         <!-- Contact End -->
-
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendMail(){
+        Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "arjunlucky059@gmail.com",
+    Password : "1626A548D05008CBA49464CFD1BCF212F14A",
+    To : 'pandureddypatterns@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "New Conatct Form",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+    }
+   
+</script>
  
            <!-- Testimonial Start -->
         <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
