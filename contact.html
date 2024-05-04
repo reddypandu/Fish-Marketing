@@ -209,17 +209,43 @@
                         <label for="subject">Subject</label>
                       </div>
                     </div>
-                    <div class="col-12">
-                      <div class="form-floating">
-                        <textarea
-                          class="form-control"
-                          name="message"
-                          placeholder="Leave a message here"
-                          id="message"
-                          style="height: 150px"
-                        ></textarea>
-                        <label for="message">Message</label>
-                      </div>
+
+                    <div class="col-md-12">
+                        <div class="wow fadeInUp" data-wow-delay="0.2s">
+                            <form  onsubmit="sendMail(); reset(); return false;">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
+                                            <label for="name">Your Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" name="email" class="form-control" id="email"
+                                                placeholder="Your Email" required>
+                                            <label for="email">Your Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject">
+                                            <label for="subject">Subject</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" name="message" placeholder="Leave a message here"
+                                                id="message" style="height: 150px"></textarea>
+                                            <label for="message">Message</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                     <div class="col-12">
                       <button class="btn btn-primary w-100 py-3" type="submit">
@@ -246,35 +272,71 @@
       </div>
       <!-- Contact End -->
 
-      <!-- Testimonial Start -->
-      <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-          <div class="text-center">
-            <h5
-              class="section-title ff-secondary text-center text-primary fw-normal"
-            >
-              Testimonial
-            </h5>
-            <h1 class="mb-5">Our Clients Say!!!</h1>
-          </div>
-          <div class="owl-carousel testimonial-carousel">
-            <div class="testimonial-item bg-transparent border rounded p-4">
-              <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-              <p>
-                "I've been a loyal customer of Laddu Fish Market for years now,
-                and I can confidently say they offer the freshest seafood in
-                town. Their commitment to quality and customer satisfaction is
-                unmatched."
-              </p>
-              <div class="d-flex align-items-center">
-                <img
-                  class="img-fluid flex-shrink-0 rounded-circle"
-                  src="img/testimonial-1.jpg"
-                  style="width: 50px; height: 50px"
-                />
-                <div class="ps-3">
-                  <h5 class="mb-1">Rachel M</h5>
-                  <small>National Supplier</small>
+ 
+           <!-- Testimonial Start -->
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="text-center">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Testimonial</h5>
+                    <h1 class="mb-5">Our Clients Say!!!</h1>
+                </div>
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="testimonial-item bg-transparent border rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>"I've been a loyal customer of Laddu Fish Market for years now, and I can confidently say
+                            they offer the freshest seafood in town. Their commitment to quality and customer
+                            satisfaction is unmatched."</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg"
+                                style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h5 class="mb-1">Rachel M</h5>
+                                <small>National Supplier</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>"As a chef, I rely on the quality of ingredients to create exceptional dishes. Laddu Fish
+                            Market consistently delivers top-notch seafood that elevates my culinary creations. Their
+                            wide selection and reliable service make them my go-to supplier."</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg"
+                                style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h5 class="mb-1">Chef James L</h5>
+                                <small>Business Man</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>"I'm impressed by the professionalism and efficiency of Laddu Fish Market. Their team always
+                            goes above and beyond to accommodate my orders, ensuring timely delivery and excellent
+                            communication throughout the process. Highly recommended!" </p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg"
+                                style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h5 class="mb-1">David P </h5>
+                                <small>Restaurant Owner</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>"Since switching to Laddu Fish Market for my seafood needs, I've noticed a significant
+                            difference in the taste and freshness of the fish I serve at my establishment. My customers
+                            have also taken notice and keep coming back for more."</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg"
+                                style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h5 class="mb-1">Sarah T </h5>
+                                <small>Seafood Restaurant Manager</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
               </div>
             </div>
